@@ -16,6 +16,8 @@ namespace Balobsis.Model
             for (int i = 0; i < wordsCount; i++)
             {
                 words = Parser.ParseWords(resultPhrase);
+                if (words == null) continue;
+
                 if (words.Count >= 2)
                 {
                     phrase = ContinueSentence(words, nextWords, 2);

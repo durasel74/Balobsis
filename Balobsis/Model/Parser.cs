@@ -10,12 +10,13 @@ namespace Balobsis.Model
         {
             var parsedText = new List<List<string>>();
             var sentencesOfText = ParseSentences(text);
+            if (sentencesOfText == null) return null;
 
             List<string> parsedSentence;
             foreach (var sentence in sentencesOfText)
             {
                 parsedSentence = ParseWords(sentence);
-                if (parsedSentence.Count != 0) 
+                if (parsedSentence != null && parsedSentence.Count != 0)
                     parsedText.Add(parsedSentence);
             }
             return parsedText;
@@ -23,6 +24,7 @@ namespace Balobsis.Model
 
         public static List<string> ParseSentences(string text)
         {
+            if (text == null) return null;
             var sentencesList = new List<string>();
             var splitedSentences = text.Split(
                 new char[] { '.', '!', '?', ';', ':', '(', ')' });
@@ -33,6 +35,7 @@ namespace Balobsis.Model
 
         public static List<string> ParseWords(string sentence)
         {
+            if (sentence == null) return null;
             var words = new List<string>();
 
             bool isRecording = false;

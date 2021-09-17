@@ -21,6 +21,7 @@ namespace Balobsis.Model
 			FileName = file.Name;
 			var text = File.ReadAllText(filePath);
 			parsedText = Parser.ParseText(text);
+			if (parsedText == null) return false;
 			nextWords = NgramGenerator.GetMostFrequentNextWords(parsedText);
 			isImported = true;
 			return true;
