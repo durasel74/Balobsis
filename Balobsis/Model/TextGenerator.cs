@@ -7,7 +7,7 @@ namespace Balobsis.Model
 	public static class TextGenerator
 	{
         public static string ContinuePhrase(Dictionary<string, string> nextWords,
-            string phraseBeginning, int wordsCount)
+            string phraseBeginning, uint wordsCount)
         {
             string resultPhrase = phraseBeginning;
 

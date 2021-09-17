@@ -20,6 +20,7 @@ namespace Balobsis
 		public MainWindow()
 		{
 			InitializeComponent();
+			DataContext = new BalobsisViewModel();
 		}
 	}
 }
